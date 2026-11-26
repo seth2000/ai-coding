@@ -12,8 +12,9 @@ Practical lessons for building real software with AI coding agents, drawn from t
 4. [Two philosophies: Tech Lead vs Product Manager](#4-two-philosophies-tech-lead-vs-product-manager)
 5. [A lean CLAUDE.md with progressive disclosure and ADRs](#5-a-lean-claudemd-with-progressive-disclosure-and-adrs)
 6. [Worked example: a PostgreSQL + .NET sample project](#6-worked-example-a-postgresql--net-sample-project)
-7. [References](#7-references)
-8. [Related reading](#8-related-reading)
+7. [Limitations](#7-limitations)
+8. [References](#8-references)
+9. [Related reading](#9-related-reading)
 
 ---
 
@@ -297,7 +298,19 @@ public sealed class OrderReadRepository(NpgsqlDataSource dataSource) : IOrderRea
 | Applied migrations never edited | CI step failing if any existing file in `db/migrations/` is modified |
 | Real SQL works | Integration tests against a PostgreSQL container |
 
-## 7. References
+---
+
+## 7. Limitations
+- **One thread, one sample.** Most of the experience here comes from the r/ClaudeAI discussion, and the concrete numbers in it — the ~7,000 automated QA tests grown over 10 months, the reliance on a top-tier plan — are self-reported by the people who did the work and were not reproduced.
+- **The tooling sections decay fastest.** `/simplify`, `/code-review`, `/security-review`, `.claude/rules/` and `PreToolUse` hooks were checked against documentation in November 2026. Assume the names have moved; the principle underneath them (a deterministic check beats a prompt instruction) has not.
+- **The ShopLite example was never compiled.** It shows the shape of a guardrailed repository — layout, ADR, scoped rules, CI mapping — not a working application. Treat the SQL, the C# and the CI table as sketches to adapt.
+- **Line-count heuristics are heuristics.** "Keep the root file under ~100 lines, split past ~150" is an observation about instruction-following, not a measured threshold.
+- **The two camps are a simplification.** Real teams sit between Tech Lead and Product Manager and slide along that axis per component, per week. The value is naming the mode out loud, not picking a side.
+- **Very little here is original.** It is a synthesis; the contribution is the ordering, the worked example and the guardrail hierarchy, not the individual observations.
+
+---
+
+## 8. References
 - Reddit thread: [Half a year of AI coding got me nowhere](https://www.reddit.com/r/ClaudeAI/comments/1y1my5l/half_a_year_of_ai_coding_got_me_nowhere/)
 - Claude Code: [Commands](https://code.claude.com/docs/en/commands) · [Memory, CLAUDE.md and AGENTS.md](https://code.claude.com/docs/en/memory) · [Debug your configuration](https://code.claude.com/docs/en/debug-your-config)
 - [pstack-claude](https://github.com/michael-denyer/pstack-claude) · [bb](https://getbb.app/) ([GitHub](https://github.com/get-bb/bb)) · [qt-commander](https://github.com/tiefeiyu/qt-commander)
@@ -306,7 +319,7 @@ public sealed class OrderReadRepository(NpgsqlDataSource dataSource) : IOrderRea
 
 ---
 
-## 8. Related reading
+## 9. Related reading
 - [DeepSeek V4.1 Flash vs Claude Opus 5.5](deepseek-v4.1-flash-vs-opus-5-5.md) — which model to pair with this workflow, and when to escalate.
 - [Verification-First AI Coding](verification-first-ai-coding.md) — how to make "done" checkable instead of trusted.
 - [Context Engineering for Coding Agents](context-engineering-for-coding-agents.md) — the budget behind section 5's lean root file.
