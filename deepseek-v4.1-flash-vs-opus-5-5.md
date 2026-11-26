@@ -19,15 +19,16 @@ In community workflows, a common pattern is to combine them: **Opus plans and re
 | Cached input (per 1M tokens) | $0.006 | $0.20 | [Artificial Analysis][aa] |
 | Context window | 1,048,576 tokens | 1,000,000 tokens | [LLM Stats][llmstats] |
 | Weights | Open (MIT license) | Closed (API only) | [AI Intel Report][aiintel] |
-| AA Intelligence Index (max effort) | 33 | 59 | [Artificial Analysis][aa] |
-| Terminal-Bench 4.0 (max effort) | 33.8% | 59.6% | [Artificial Analysis][aa] |
-| Output speed (AA, first-party API) | ~166–171 tok/s | ~104–114 tok/s | [Artificial Analysis][aa] |
-| Wins on the 8 benchmarks both report | 2 (AutomationBench, DeepSWE 1.1) | 6 | [LLM Stats][llmstats] |
+| AA Intelligence Index (max effort) | 32 | 59 | [Artificial Analysis][aa] |
+| Terminal-Bench 4.1 (max effort) | 32.3% | 59.1% | [Artificial Analysis][aa] |
+| Output speed (AA, first-party API) | ~170–182 tok/s | ~105–116 tok/s | [Artificial Analysis][aa] |
+| Cost per task (AA, max effort) | $0.60 | $10.04 | [Artificial Analysis][aa] |
+| Wins on the 8 benchmarks both report | 2 (AutomationBench at matched high effort, DeepSWE 1.1) | 6 | [LLM Stats][llmstats], [Artificial Analysis][aa] |
 
 **Key points**
 - Flash's input tokens cost about **13x less** and its output tokens about **17x less**. On a blended basis, it is about **15x cheaper** ([LLM Stats][llmstats]).
-- Opus clearly leads on reasoning and agentic coding, but it doesn't win everything. Flash comes out ahead on AutomationBench and DeepSWE 1.1.
-- Effort level matters a lot. On Artificial Analysis, Opus ranges from **$0.98 per task (low) to $10.04 per task (max)** ([Artificial Analysis][aa]).
+- Opus clearly leads on reasoning and agentic coding, but it does not win everything. Flash comes out ahead on DeepSWE 1.1, and on AutomationBench **at matched high effort** — at max effort Opus is ahead there (69.5% vs 66.6%), which is a useful reminder that the effort setting decides several of these rows.
+- Effort level matters a lot. On Artificial Analysis, Opus ranges from **$0.98 per task (low) to $10.04 per task (max)**, and Flash from **$0.43 (non-reasoning) to $0.60 (max)** — a gap of roughly **17x** per task, not the 13x the token price suggests ([Artificial Analysis][aa]).
 
 ---
 
@@ -44,7 +45,7 @@ These are **independent tests that have not been reproduced**. Each one is a sma
 
 > **On the 0.45 Forge score.** LeanZero scores each model as a pair of independent builds. The two 1017 builds scored 0.2422 and 0.6618 (median 0.4520), against 0.3342 for the September version — same task fingerprint, same starter app, same grading sites. The gap between two builds of one model is larger than the gap between most models on the board, which is the report's own strongest argument against trusting a single run.
 ### Note on speed
-Test #1 reported Flash at **~1,021 tok/s** and Opus at **~155 tok/s**. Artificial Analysis measured **~166–171 tok/s** for Flash and **~104–114 tok/s** for Opus on first-party APIs ([Artificial Analysis][aa]). Speed depends heavily on the hosting provider and the tool used (CLI or harness), so this note uses the Artificial Analysis figures as the baseline.
+Test #1 reported Flash at **~1,021 tok/s** and Opus at **~155 tok/s**, measured by the author in one harness. Artificial Analysis measures **170–182 tok/s** for Flash and **105–116 tok/s** for Opus on first-party APIs, across effort levels ([Artificial Analysis][aa]). Speed depends heavily on the provider and the harness, so this note treats the Artificial Analysis figures as the baseline and the test #1 numbers as evidence about that particular setup.
 
 ---
 
@@ -64,6 +65,7 @@ Test #1 reported Flash at **~1,021 tok/s** and Opus at **~155 tok/s**. Artificia
 - **Small samples.** Test #1 is a single run. Tests #4–#6 are anecdotes from Reddit.
 - **Different effort settings.** Default, medium, and adaptive settings were mixed across tests. Compare results only within the same effort level.
 - **Tool and harness effects.** OpenCode, Claude Code, LeanZero's harness, and Hermes all affect speed, token use, and success rate.
+- **Numbers drift.** Artificial Analysis revises its suite and re-measures every effort level. Between the first draft of this note and the check on 26 Nov 2026, Terminal-Bench moved from 4.0 to 4.1 and several rows moved with it. Section 1 is a snapshot of a moving table; re-read the linked comparison before quoting a figure.
 - **Fast-moving market.** Gemini 4 Neon (Nov 2026) reports higher scores than Opus 5.5 on most of Google's listed benchmarks ([OfficeChai][oc]). Opus 5.6 is reportedly being tested ([Crypto Briefing][cb]). Check the numbers again before you rely on them.
 - **Not reproduced.** The figures in section 2 are reported by their authors and have not been re-run.
 
