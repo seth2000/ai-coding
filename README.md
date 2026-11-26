@@ -14,7 +14,7 @@ These are **working notes, not documentation**. Each one records what I currentl
 | **[Agent Guardrails and Security](agent-guardrails-and-security.md)** | The agent as a confused deputy: untrusted inputs, prompt injection in real repos, sandboxing, egress control, credentials, supply chain, and the merge gate | Guide |
 | **[Asking an Agent for a Code Review](review-requests-for-coding-agents.md)** | Review requests that produce findings instead of approval: the six-part request, an output contract, evidence-seeking questions, a layer split, and four copyable prompts | Guide |
 | **[Multi-Agent Orchestration](multi-agent-orchestration.md)** | When fan-out pays, three topologies, slicing by verifiable unit, the worker brief, fan-in as the real cost, and the failure modes that come with N workers | Guide |
-| **[DeepSeek V4.1 Flash vs Claude Opus 5.5](deepseek-v4.1-flash-vs-opus-5.5.md)** | Prices, context, benchmarks and community tests, plus a planner/worker routing strategy with an honest limitations section | Research note |
+| **[DeepSeek V4.1 Flash vs Claude Opus 5.5](deepseek-v4.1-flash-vs-opus-5-5.md)** | Prices, context, benchmarks and community tests, plus a planner/worker routing strategy with an honest limitations section | Research note |
 
 ## Start here
 
@@ -23,7 +23,7 @@ These are **working notes, not documentation**. Each one records what I currentl
 - **You are about to point an agent at a repo with real credentials in it** → [Agent Guardrails and Security](agent-guardrails-and-security.md) first, everything else after.
 - **You want a second opinion on a diff you do not want to read twice** → [Asking an Agent for a Code Review](review-requests-for-coding-agents.md).
 - **You are about to run several agents at the same time** → [Multi-Agent Orchestration](multi-agent-orchestration.md) before you open the second terminal.
-- **You are choosing models, or deciding whether the expensive one is worth it** → [DeepSeek V4.1 Flash vs Claude Opus 5.5](deepseek-v4.1-flash-vs-opus-5.5.md).
+- **You are choosing models, or deciding whether the expensive one is worth it** → [DeepSeek V4.1 Flash vs Claude Opus 5.5](deepseek-v4.1-flash-vs-opus-5-5.md).
 
 The six guides form one argument: **the workflow sets the constraints, verification makes them checkable, context keeps the session able to follow them, and review is how someone other than the author enforces them.** Orchestration is that same loop with several workers; security decides what happens when a constraint fails.
 

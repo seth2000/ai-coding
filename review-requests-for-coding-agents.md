@@ -250,7 +250,7 @@ Where a control does not apply, write "not applicable" rather than omitting it.
 - [Context Engineering for Coding Agents](context-engineering-for-coding-agents.md) — fresh sessions, chunking, and what a reviewer's window costs.
 - [Multi-Agent Orchestration](multi-agent-orchestration.md) — when the review itself fans out into parallel reviewers.
 - [Agent Guardrails and Security](agent-guardrails-and-security.md) — the security pass, and what to do when a finding is a real incident.
-- [DeepSeek V4.1 Flash vs Claude Opus 5.5](deepseek-v4.1-flash-vs-opus-5.5.md) — using a cheap model as the first-pass reviewer and escalating the diff that matters.
+- [DeepSeek V4.1 Flash vs Claude Opus 5.5](deepseek-v4.1-flash-vs-opus-5-5.md) — using a cheap model as the first-pass reviewer and escalating the diff that matters.
 - [All notes](README.md)
 
 ## 12. Sources

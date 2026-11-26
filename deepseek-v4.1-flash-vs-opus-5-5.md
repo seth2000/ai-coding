@@ -42,6 +42,7 @@ These are **independent tests that have not been reproduced**. Each one is a sma
 | 5 | Debugging in large codebases (100k+ tokens) | Informal reports from users | Described as "lossy" at high context. Loses track of earlier constraints. | Stays focused. Strong at finding root causes. | Opus is more reliable for hands-off, high-context work. *Both models support ~1M tokens, so this is about quality, not capacity.* | [S4], [S6] |
 | 6 | Visual and spatial tasks (paper airplane animation, slide design) | Informal comparison of several models | Rougher layouts on vague prompts. Needed retries. | Understood spatial intent on the first try. | Opus handles vague creative prompts better. | [S7] |
 
+> **On the 0.45 Forge score.** LeanZero scores each model as a pair of independent builds. The two 1017 builds scored 0.2422 and 0.6618 (median 0.4520), against 0.3342 for the September version — same task fingerprint, same starter app, same grading sites. The gap between two builds of one model is larger than the gap between most models on the board, which is the report's own strongest argument against trusting a single run.
 ### Note on speed
 Test #1 reported Flash at **~1,021 tok/s** and Opus at **~155 tok/s**. Artificial Analysis measured **~166–171 tok/s** for Flash and **~104–114 tok/s** for Opus on first-party APIs ([Artificial Analysis][aa]). Speed depends heavily on the hosting provider and the tool used (CLI or harness), so this note uses the Artificial Analysis figures as the baseline.
 
@@ -90,18 +91,24 @@ Test #1 reported Flash at **~1,021 tok/s** and Opus at **~155 tok/s**. Artificia
 | `cb` | Crypto Briefing — Opus 5.6 reported in testing | <https://cryptobriefing.com/anthropic-testing-opus-5-6-claude-code/> |
 | `oc` | OfficeChai — Gemini 4 Neon benchmarks | <https://officechai.com/ai/gemini-4-neon-benchmarks/> |
 
+### Underlying evaluations
+| Evaluation | What it ran | Link |
+|---|---|---|
+| Olam Labs — *Diplomacy in Multi-Agent Arena* | 11 models, 40 runs each; the evaluation behind `S2` | <https://olamlabs.ai/research/diplomacy/paper.pdf> |
+| LeanZero — Forge 2.0 and Gauntlet 7.2 | 105 and 99 automated checks; the evaluation behind `S3` | <https://leanzero.net/blog?tag=deepseek-v4-1-flash> |
+
 ### Community tests
 | Ref | Where | Thread | Link |
 |---|---|---|---|
-| `S1` | r/DeepSeek, u/Fun_Combination_6569 | *One-shot test: DeepSeek V4.1 Flash vs Opus 5.5 on a strict design brief* | — |
-| `S2` | r/DeepSeek | *DeepSeek V4.1 Flash matched Claude Opus 5.5 and Grok 4.7 on a diplomatic negotiation eval* | — |
-| `S3` | LeanZero (leanzero.net) | *DeepSeek V4.1 Flash vs Claude Opus 5.5: coding benchmark* — Forge 2.0 and Gauntlet 7.2, with raw logs and OpenRouter bills published | — |
-| `S4` | r/ClaudeCode | *How would you compare Opus 5.5 to Deepseek Flash 4.1* | — |
-| `S5` | r/SideProject | *Made Opus the principal dev and DeepSeek its team* | — |
-| `S6` | r/hermesagent | *What other models truly feels agentic under Hermes?* | — |
-| `S7` | r/ClaudeAI | *Opus 5.5 vs. GPT-6 Astra vs. DeepSeek V4.1 Flash vs. Gemini 3.8* | — |
+| `S1` | r/DeepSeek, u/Fun_Combination_6569 | *One-shot test: DeepSeek V4.1 Flash vs Opus 5.5 on a strict design brief* | [search](https://www.reddit.com/r/DeepSeek/search/?q=One-shot%20test%20DeepSeek%20V4.1%20Flash%20vs%20Opus%205.5%20strict%20design%20brief&restrict_sr=1&sort=relevance) |
+| `S2` | r/DeepSeek, reporting the Olam Labs evaluation | *DeepSeek V4.1 Flash matched Claude Opus 5.5 and Grok 4.7 on a diplomatic negotiation eval* | [write-up](https://kongchang.com/en/articles/diplomatic-negotiation-benchmark-of-11-models-gpt-6-1-sol-the-only-sweeper-but-at-a-cost) |
+| `S3` | LeanZero (Mihai Perdum) | *DeepSeek V4.1 Flash 1017 benchmark: same task, two builds, 0.24 and 0.66* — Forge 2.0 and Gauntlet 7.2, with raw logs and OpenRouter bills | [write-up](https://dev.to/mihai_leanzero/deepseek-v41-flash-1017-benchmark-same-task-two-builds-024-and-066-32b8) |
+| `S4` | r/ClaudeCode | *How would you compare Opus 5.5 to Deepseek Flash 4.1* | [search](https://www.reddit.com/r/ClaudeCode/search/?q=How%20would%20you%20compare%20Opus%205.5%20to%20Deepseek%20Flash%204.1&restrict_sr=1&sort=relevance) |
+| `S5` | r/SideProject | *Made Opus the principal dev and DeepSeek its team* | [search](https://www.reddit.com/r/SideProject/search/?q=Made%20Opus%20the%20principal%20dev%20and%20DeepSeek%20its%20team&restrict_sr=1&sort=relevance) |
+| `S6` | r/hermesagent | *What other models truly feels agentic under Hermes?* | [search](https://www.reddit.com/r/hermesagent/search/?q=What%20other%20models%20truly%20feels%20agentic%20under%20Hermes&restrict_sr=1&sort=relevance) |
+| `S7` | r/ClaudeAI | *Opus 5.5 vs. GPT-6 Astra vs. DeepSeek V4.1 Flash vs. Gemini 3.8* | [search](https://www.reddit.com/r/ClaudeAI/search/?q=Opus%205.5%20vs%20GPT-6%20Astra%20vs%20DeepSeek%20V4.1%20Flash%20vs%20Gemini%203.8&restrict_sr=1&sort=relevance) |
 
-> **Open item:** the `S1`–`S7` permalinks are not recorded yet. Each thread is cited by community, author and exact title so it can be found again; paste the permalink into the `Link` column when you have it. Until then the section 2 numbers stay "reported, not attributable" — which is why they are kept out of section 1.
+> **How these are linked.** `S2` and `S3` point at the published write-ups of the evaluations those threads report on, so the numbers can be checked at the source. The remaining threads are Reddit posts whose permalinks were never captured: their `Link` cell is a search scoped to the right subreddit for the exact title, which lands on the thread if it still exists. Replace it with the permalink when you have one. This is also why the `S1` and `S4`–`S7` rows of section 2 stay labelled as reported rather than verified.
 
 <!-- Reference definitions for the shortened citations above. Markdown does not render these lines. -->
 [aa]: https://artificialanalysis.ai/models/comparisons/deepseek-v4-1-flash-1017-vs-claude-opus-5-5

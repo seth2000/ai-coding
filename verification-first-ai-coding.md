@@ -180,7 +180,7 @@ When a fix fails twice, stop re-prompting. Revert to the last clean commit, find
 
 - [AI Coding Workflows: Pitfalls, Philosophies, Tooling & Architecture](ai-coding-workflows-guide.md) — the two-strike rule, the guardrail hierarchy, and the ADR template this article leans on.
 - [Context Engineering for Coding Agents](context-engineering-for-coding-agents.md) — why a reviewer with fresh context sees things a long session cannot.
-- [DeepSeek V4.1 Flash vs Claude Opus 5.5](deepseek-v4.1-flash-vs-opus-5.5.md) — the "escalate when tests fail" routing idea this article makes measurable.
+- [DeepSeek V4.1 Flash vs Claude Opus 5.5](deepseek-v4.1-flash-vs-opus-5-5.md) — the "escalate when tests fail" routing idea this article makes measurable.
 - [Agent Guardrails and Security](agent-guardrails-and-security.md) — what to do when the change is not merely wrong but dangerous.
 - [Asking an Agent for a Code Review](review-requests-for-coding-agents.md) — the reviewer session, specified as a prompt with an output contract.
 - [Multi-Agent Orchestration](multi-agent-orchestration.md) — running the evidence ladder once per slice, then again on the merge.

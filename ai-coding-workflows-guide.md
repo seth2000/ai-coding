@@ -307,7 +307,7 @@ public sealed class OrderReadRepository(NpgsqlDataSource dataSource) : IOrderRea
 ---
 
 ## 8. Related reading
-- [DeepSeek V4.1 Flash vs Claude Opus 5.5](deepseek-v4.1-flash-vs-opus-5.5.md) — which model to pair with this workflow, and when to escalate.
+- [DeepSeek V4.1 Flash vs Claude Opus 5.5](deepseek-v4.1-flash-vs-opus-5-5.md) — which model to pair with this workflow, and when to escalate.
 - [Verification-First AI Coding](verification-first-ai-coding.md) — how to make "done" checkable instead of trusted.
 - [Context Engineering for Coding Agents](context-engineering-for-coding-agents.md) — the budget behind section 5's lean root file.
 - [Agent Guardrails and Security](agent-guardrails-and-security.md) — what to enforce when a linter is not enough.

@@ -247,7 +247,7 @@ Read the table the other way: if a row has no enforcement point outside the mode
 - [AI Coding Workflows: Pitfalls, Philosophies, Tooling & Architecture](ai-coding-workflows-guide.md) — the guardrail hierarchy (guidance, then linter, then hook, then CI).
 - [Verification-First AI Coding](verification-first-ai-coding.md) — the merge gate these controls ultimately protect.
 - [Context Engineering for Coding Agents](context-engineering-for-coding-agents.md) — why the tool surface is also an attack surface.
-- [DeepSeek V4.1 Flash vs Claude Opus 5.5](deepseek-v4.1-flash-vs-opus-5.5.md) — a cheaper worker model makes cheap containment more, not less, important.
+- [DeepSeek V4.1 Flash vs Claude Opus 5.5](deepseek-v4.1-flash-vs-opus-5-5.md) — a cheaper worker model makes cheap containment more, not less, important.
 - [Asking an Agent for a Code Review](review-requests-for-coding-agents.md) — the security-only review pass, as a prompt.
 - [Multi-Agent Orchestration](multi-agent-orchestration.md) — four parallel sessions means four times the blast radius.
 - [All notes](README.md)

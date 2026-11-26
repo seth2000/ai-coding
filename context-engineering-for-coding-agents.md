@@ -239,7 +239,7 @@ Now the same session done badly: whole-file reads (~40k), one unfiltered `npm in
 
 - [AI Coding Workflows: Pitfalls, Philosophies, Tooling & Architecture](ai-coding-workflows-guide.md) — where the lean root file and the ADR pattern come from.
 - [Verification-First AI Coding](verification-first-ai-coding.md) — the reviewer session this article's isolation argument depends on.
-- [DeepSeek V4.1 Flash vs Claude Opus 5.5](deepseek-v4.1-flash-vs-opus-5.5.md) — why long-context work is where a stronger model earns its price.
+- [DeepSeek V4.1 Flash vs Claude Opus 5.5](deepseek-v4.1-flash-vs-opus-5-5.md) — why long-context work is where a stronger model earns its price.
 - [Agent Guardrails and Security](agent-guardrails-and-security.md) — what to do when the context itself is hostile.
 - [Asking an Agent for a Code Review](review-requests-for-coding-agents.md) — what to put in a reviewer's window, and what to keep out.
 - [Multi-Agent Orchestration](multi-agent-orchestration.md) — the subagent firewall turned into a working topology.

@@ -209,7 +209,7 @@ A useful heuristic: **if two workers would need to talk to each other, they shou
 - [Asking an Agent for a Code Review](review-requests-for-coding-agents.md) — the rubric an integrated review should use.
 - [Agent Guardrails and Security](agent-guardrails-and-security.md) — worktrees, sandboxes, and the blast radius of four parallel sessions.
 - [AI Coding Workflows: Pitfalls, Philosophies, Tooling & Architecture](ai-coding-workflows-guide.md) — thin vertical slices, the two-strike rule, and where ADRs fit.
-- [DeepSeek V4.1 Flash vs Claude Opus 5.5](deepseek-v4.1-flash-vs-opus-5.5.md) — a cheap worker model is what makes fan-out affordable.
+- [DeepSeek V4.1 Flash vs Claude Opus 5.5](deepseek-v4.1-flash-vs-opus-5-5.md) — a cheap worker model is what makes fan-out affordable.
 - [All notes](README.md)
 
 ## 12. Sources
